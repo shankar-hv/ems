@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Delete {{ employee.name }}
+{% endblock title %}
+
+<style>
+    div{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+    }
+</style>
+
+{% block content %}
+    <br>
+    <center>
+        <h3>Are you sure you want to delete {{employee.name}} </h3>
+        <br>
+        <div>
+            <form method="POST">
+                {% csrf_token %}
+                <input type="submit" name="" value="Confirm" class="btn btn-danger">
+                <a href="{% url 'home' %}"  class="btn btn-primary">Cancel</a>
+            </form>
+        </div>
+    </center>
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {% if employee %}
+        {{employee.name}}
+    {% else %}
+        Not Found
+    {% endif %}
+{% endblock title %}
+
+{% block content %}
+    {% if employee %}
+        <center>
+            <h1>Details of {{employee.name}}</h1>
+            <hr>
+            <div style="text-align: start; padding-left: 38vw ;">
+                <h3>Employee ID: {{employee.eid}}</h3>
+                <h3>Employee Salary: {{employee.salary}}</h3>
+                <h3>Employee Position: {{employee.position}}</h3>
+            </div>
+        </center>
+    {% else %}
+        <h1 style="color:red">Error 404 : Record Not Found.</h1>
+    {% endif %}
+{% endblock content %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Update
+{% endblock title%}
+
+{% block content %}
+    <center>
+        <form method="POST">
+            {% csrf_token %}
+            Name: <input type="text" name="name" id="" placeholder="{{employee.name}}">
+            Employee ID: <input type="text" name="eid" id="" placeholder="{{employee.eid}}">
+            Salary : <input type="text" name="salary" id="" placeholder="{{employee.salary}}">
+            Position : <input type="text" name="position" id="" placeholder="{{employee.position}}">
+
+            <input type="submit" name="" value="Update">
+        </form>
+    </center>
+{% endblock content%}

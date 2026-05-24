@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Home
+{% endblock title %}
+<style>
+    tr,td{
+        border: 2px solid black;
+    }
+</style>
+{% block content %}
+
+<center>
+    <h1>Employee Management System</h1>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Name</th>
+            <th>Employee ID</th>
+            <th>Salary</th>
+            <th>Position</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for employee in employees %}
+
+        <tr>
+            <td><a href="{% url 'details' employee.id %}">{{ employee.name }}</a></td>
+            <td>{{ employee.eid }}</td>
+            <td>{{ employee.salary }}</td>
+            <td>{{ employee.position }}</td>
+
+            <td>
+                <a href="{% url 'update' employee.id %}" class="btn btn-primary">
+                    Update
+                </a>
+                <a href="{% url 'delete' employee.id %}" class="btn btn-danger">
+                    Delete
+                </a>
+            </td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <br><br>
+
+    <a href="{% url 'create' %}" class="btn btn-success">
+        Add Employee
+    </a>
+
+</center>
+
+{% endblock content %}

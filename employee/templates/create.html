@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Update {{employee.name}}
+{% endblock title %}
+
+{% block content %}
+<h1>Create Student</h1>
+<form action="" method="post">
+  {% csrf_token %}
+  <label for="">Employee Name</label><br />
+  <input type="text" name="name" id="" /> <br /><br />
+
+  <label for="">Employee ID.</label><br />
+  <input type="text" name="eid" id="" /> <br /><br />
+
+  <label for="">Employee Salary</label><br />
+  <input type="number" name="salary" id="" /> <br /><br />
+
+  <label for="">Employee Position</label><br />
+  <input type="text" name="position" id="" /> <br /><br />
+
+
+  <input type="submit" value="save" />
+</form>
+{% endblock content %}
