@@ -4,7 +4,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 def home(request):
-    # query = request.GET.get('search')
+    query = request.GET.get('search')
     employees = Employee.objects.all()
     return render(request, 'home.html', {'employees': employees}) 
 
